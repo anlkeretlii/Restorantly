@@ -1,1 +1,47 @@
-﻿
+﻿<section id="book-a-table" class="book-a-table">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+            <h2>Rezervasyon</h2>
+            <p>Rezervasyon yapın:</p>
+        </div>
+
+        <form action="@Url.Action("BookTableAdd", "Default")" method="post" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 form-group">
+                    <input type="text" name="Name" class="form-control" id="name" placeholder="Adınız" required>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+                    <input type="email" class="form-control" name="Email" id="email" placeholder="E-posta" required>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+                    <input type="text" class="form-control" name="Phone" id="phone" placeholder="Telefon" required>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group mt-3">
+                    <input type="text" name="ReservationDate" class="form-control" id="date" placeholder="Tarih" required>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group mt-3">
+                    <input type="text" class="form-control" name="Time" id="time" placeholder="Saat" required>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group mt-3">
+                    <input type="number" class="form-control" name="GuestCount" id="people" placeholder="Kişi Sayısı" required>
+                </div>
+            </div>
+            <div class="form-group mt-3">
+                <textarea class="form-control" name="Description" rows="5" placeholder="Mesaj"></textarea>
+            </div>
+            <div class="mb-3">
+                <div class="loading">Yükleniyor</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Rezervasyon talebiniz gönderildi. Rezervasyonunuzu onaylamak için sizi arayacağız veya e-posta göndereceğiz. Teşekkürler!</div>
+            </div>
+            <div class="text-center"><button type="submit">Rezervasyon Yap</button></div>
+        </form>
+
+    </div>
+</section><!-- End Book A Table Section -->
+
+@if (ViewBag.Message != null)
+{
+    <script>alert('@ViewBag.Message')</script>
+}
